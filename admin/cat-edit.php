@@ -9,13 +9,19 @@
 			margin-top: 8px;
 		}
 	</style>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<?php include("confs/auth.php"); ?>
 	<h1>Edit Category</h1>
-
+	<ul class="menu">
+		<li><a href="book-list.php">Manage Books</a></li>
+		<li><a href="cat-list.php">Manage Categories</a></li>
+		<li><a href="orders.php">Manage Orders</a></li>
+		<li><a href="logout.php">Logout</a></li>
+	</ul>
 	<?php
 		include("confs/config.php");
-
 		$id = $_GET['id'];
 		$result = mysqli_query($conn, "SELECT * FROM categories WHERE id = $id");
 		$row = mysqli_fetch_assoc($result);
